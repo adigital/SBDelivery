@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "947535539867",
+    "project_id": "sb-delivery",
+    "storage_bucket": "sb-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947535539867:android:dab262413dea942183a03e",
+        "android_client_info": {
+          "package_name": "ru.skillbranch.sbdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947535539867-3ksdp1fcbbg7iqr4h4cl2j66ho4h64fu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOsSZcLYjVf1iRCEcLxy5KPENZx7BL2nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947535539867-3ksdp1fcbbg7iqr4h4cl2j66ho4h64fu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

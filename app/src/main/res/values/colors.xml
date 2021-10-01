@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#24222C</color>
+    <color name="color_accent">#FF6F14</color>
+    <color name="color_transparent">#00FFFFFF</color>
+    <color name="color_border">#33FFFFFF</color>
+    <color name="color_button">#33313B</color>
+    <color name="menu_background">#22222C</color>
+    <color name="window_background">#1A1A21</color>
+    <color name="text_view_color">#B3BFCF</color>
+    <color name="text_view_validate_color">#EF3131</color>
+    <color name="dish_item_text">#FAFAFA</color>
+    <color name="dish_favorite_background">#FEC90D</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tab_text_color">#A6A6B2</color>
+    <color name="picker_border_color">#48484D</color>
+    <color name="review_item_background">#33313C</color>
+    <color name="order_item_text_view_color">#A0ABB9</color>
+</resources>

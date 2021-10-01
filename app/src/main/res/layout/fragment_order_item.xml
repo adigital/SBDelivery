@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="orderItemFragment"
+            type="ru.skillbranch.sbdelivery.ui.fragments.orderitem.OrderItemFragment" />
+
+        <variable
+            name="viewModel"
+            type="ru.skillbranch.sbdelivery.viewmodels.fragments.OrderItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        tools:context=".ui.fragments.orderitem.OrderItemFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/window_background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingTop="40dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/tvItemOrderStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/label_status"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvItemOrderStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@{viewModel.order.order.status}"
+                    android:textColor="@color/text_view_color"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvItemOrderStatusLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvItemOrderStatusLabel"
+                    app:layout_constraintTop_toTopOf="@+id/tvItemOrderStatusLabel"
+                    tools:text="В обработке" />
+
+
+                <TextView
+                    android:id="@+id/tvItemOrderTotalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/label_total"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemOrderStatusLabel" />
+
+                <TextView
+                    android:id="@+id/tvItemOrderTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@{@string/sum_format2(viewModel.order.order.total)}"
+                    android:textColor="@color/text_view_color"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvItemOrderTotalLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvItemOrderStatus"
+                    app:layout_constraintTop_toTopOf="@+id/tvItemOrderTotalLabel"
+                    tools:text="1130 руб." />
+
+
+                <TextView
+                    android:id="@+id/tvItemOrderAddressLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/label_address"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemOrderTotalLabel" />
+
+                <TextView
+                    android:id="@+id/tvItemOrderAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@{viewModel.order.order.address}"
+                    android:textColor="@color/text_view_color"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvItemOrderAddressLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvItemOrderTotal"
+                    app:layout_constraintTop_toTopOf="@+id/tvItemOrderAddressLabel"
+                    tools:text="г. Москва, ул. Тверская, д. 7" />
+
+
+                <TextView
+                    android:id="@+id/tvItemOrderDateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/label_date"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemOrderAddressLabel" />
+
+                <TextView
+                    android:id="@+id/tvItemOrderDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/text_view_color"
+                    android:textSize="14sp"
+                    app:dateMillis="@{viewModel.order.order.createdAt}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvItemOrderDateLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvItemOrderDateLabel"
+                    app:layout_constraintStart_toStartOf="@+id/tvItemOrderAddress"
+                    app:layout_constraintTop_toTopOf="@+id/tvItemOrderDateLabel"
+                    tools:text="5 апреля 2020" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnItemOrderAction"
+                    style="@style/ButtonSecondary"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="25dp"
+                    android:onClick="@{() -> orderItemFragment.onAction()}"
+                    android:text="@{viewModel.order.order.completed ? @string/repeat_order : @string/cancel_order}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemOrderDateLabel" />
+
+                <TextView
+                    android:id="@+id/tvItemOrderListLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/label_list_order"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnItemOrderAction" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvItemOrderList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    app:dividerDirection="@{1}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemOrderListLabel" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/progressAuth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="@{orderItemFragment.progressShow ? view.VISIBLE : view.GONE}"
+            tools:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

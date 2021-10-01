@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="profileFragment"
+            type="ru.skillbranch.sbdelivery.ui.fragments.ProfileFragment" />
+
+        <variable
+            name="viewModel"
+            type="ru.skillbranch.sbdelivery.viewmodels.fragments.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        tools:context=".ui.fragments.ProfileFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="38dp">
+
+                <TextView
+                    android:id="@+id/tvProfileFirstName"
+                    style="@style/TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:text="@string/first_name"
+                    app:layout_constraintBottom_toTopOf="@+id/etProfileFirstName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textColorId="@{viewModel.firstNameBlank || viewModel.firstNameNotValid ? @color/text_view_validate_color : @color/text_view_color}" />
+
+                <TextView
+                    style="@style/TextViewValidate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="29dp"
+                    android:text="@{viewModel.firstNameBlank ? @string/validate_not_blank : @string/validate_letters_only}"
+                    android:visibility="@{viewModel.firstNameBlank || viewModel.firstNameNotValid ? view.VISIBLE : view.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProfileFirstName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProfileFirstName"
+                    tools:text="@string/validate_letters_only"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/etProfileFirstName"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="30dp"
+                    android:enabled="@{viewModel.isEdit}"
+                    android:inputType="textCapWords"
+                    android:selectAllOnFocus="true"
+                    android:text="@={viewModel.firstName}"
+                    app:addTextChangeListener="@{viewModel}"
+                    app:layout_constraintBottom_toTopOf="@+id/tvProfileLastName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileFirstName"
+                    tools:text="Иван" />
+
+
+                <TextView
+                    android:id="@+id/tvProfileLastName"
+                    style="@style/TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/last_name"
+                    app:layout_constraintBottom_toTopOf="@+id/etProfileLastName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etProfileFirstName"
+                    app:textColorId="@{viewModel.lastNameBlank || viewModel.lastNameNotValid ? @color/text_view_validate_color : @color/text_view_color}" />
+
+                <TextView
+                    style="@style/TextViewValidate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="29dp"
+                    android:text="@{viewModel.lastNameBlank ? @string/validate_not_blank : @string/validate_letters_only}"
+                    android:visibility="@{viewModel.lastNameBlank || viewModel.lastNameNotValid ? view.VISIBLE : view.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProfileLastName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProfileLastName"
+                    tools:text="@string/validate_letters_only"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/etProfileLastName"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="30dp"
+                    android:enabled="@{viewModel.isEdit}"
+                    android:inputType="textCapWords"
+                    android:selectAllOnFocus="true"
+                    android:text="@={viewModel.lastName}"
+                    app:addTextChangeListener="@{viewModel}"
+                    app:layout_constraintBottom_toTopOf="@+id/tvProfileEmail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileLastName"
+                    tools:text="Сидоров" />
+
+
+                <TextView
+                    android:id="@+id/tvProfileEmail"
+                    style="@style/TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/email"
+                    app:layout_constraintBottom_toTopOf="@+id/etProfileEmail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etProfileLastName"
+                    app:textColorId="@{viewModel.emailBlank || viewModel.emailNotValid ? @color/text_view_validate_color : @color/text_view_color}" />
+
+                <TextView
+                    style="@style/TextViewValidate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="29dp"
+                    android:text="@{viewModel.emailBlank ? @string/validate_not_blank : @string/validate_email_only}"
+                    android:visibility="@{viewModel.emailBlank || viewModel.emailNotValid ? view.VISIBLE : view.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProfileEmail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProfileEmail"
+                    tools:text="@string/validate_email_only"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/etProfileEmail"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="30dp"
+                    android:enabled="@{viewModel.isEdit}"
+                    android:inputType="textEmailAddress"
+                    android:selectAllOnFocus="true"
+                    android:text="@={viewModel.email}"
+                    app:addTextChangeListener="@{viewModel}"
+                    app:layout_constraintBottom_toTopOf="@+id/btnRegRegistration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
+                    tools:text="sidorov.ivan@mail.ru" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRegRegistration"
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="30dp"
+                    android:enabled="@{(viewModel.isDataCorrect &amp;&amp; viewModel.isEdit) || !viewModel.isEdit}"
+                    android:onClick="@{() -> profileFragment.onEdit()}"
+                    android:text="@{viewModel.isEdit ? @string/save : @string/edit}"
+                    app:layout_constraintBottom_toTopOf="@+id/btnRegLogin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etProfileEmail" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRegLogin"
+                    style="@style/ButtonSecondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:onClick="@{() -> profileFragment.onButton()}"
+                    android:text="@{viewModel.isEdit ? @string/cancel : @string/change_password}"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnRegRegistration" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="@{profileFragment.progressShow ? view.VISIBLE : view.GONE}"
+            tools:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="orderItem"
+            type="ru.skillbranch.sbdelivery.data.local.entities.OrderItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/window_background"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/rivOrderListItemPicture"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{orderItem.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="10dp"
+            tools:src="@drawable/dish_example" />
+
+        <TextView
+            android:id="@+id/tvOrderListItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{orderItem.name}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rivOrderListItemPicture"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Пицца маргарита" />
+
+        <TextView
+            android:id="@+id/tvOrderListItemCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{@string/total_format(orderItem.amount)}"
+            android:textColor="@color/order_item_text_view_color"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rivOrderListItemPicture"
+            app:layout_constraintStart_toEndOf="@+id/rivOrderListItemPicture"
+            tools:text="1 шт." />
+
+        <TextView
+            android:id="@+id/tvOrderListItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{@string/sum_format(orderItem.price)}"
+            android:textColor="@color/color_accent"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrderListItemCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvOrderListItemCount"
+            tools:text="680 ₽" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

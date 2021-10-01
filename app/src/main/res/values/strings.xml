@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">SB Delivery</string>
+    <string name="action_settings">Меню</string>
+    <string name="action_search">Поиск</string>
+    <string name="action_sort">Сортировка</string>
+
+    <string name="menu_home">Главная</string>
+    <string name="menu_menu">Меню</string>
+    <string name="menu_favorites">Избранное</string>
+    <string name="menu_cart">Корзина</string>
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_orders">Заказы</string>
+    <string name="menu_notice">Уведомления</string>
+    <string name="menu_about">О приложении</string>
+
+    <string name="action_sort1">По алфавиту</string>
+    <string name="action_sort2">По популярности</string>
+    <string name="action_sort3">По рейтингу</string>
+
+    <string name="auth">Вход</string>
+    <string name="recovery">Восстановление пароля</string>
+
+    <string name="about">SB Delivery 1.0</string>
+
+    <string name="dish_action">АКЦИЯ</string>
+    <string name="menu_action">Акции</string>
+
+    <string name="home_all">См. все</string>
+    <string name="home_recommendation">Рекомендуем</string>
+    <string name="home_best">Лучшее</string>
+    <string name="home_likes">Популярное</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="login">Войти</string>
+    <string name="registration_btn">Зарегистрироваться</string>
+    <string name="registration">Регистрация</string>
+    <string name="password_recovery">Забыли пароль?</string>
+    <string name="search_hint">Поиск блюд</string>
+    <string name="no_favorites">Нет избранных блюд</string>
+    <string name="add_to_cart">Добавить в корзину</string>
+    <string name="description_dish_picture">Dish picture</string>
+    <string name="description_dish_favorite">Dish favorite</string>
+    <string name="review">Отзывы</string>
+    <string name="add_review">Добавить отзыв</string>
+    <string name="label_review">Отзывы</string>
+    <string name="label_no_review">Нет отзывов</string>
+    <string name="dialog_review_title">Оставить отзыв</string>
+    <string name="dialog_review_text_placeholder">Введите отзыв</string>
+    <string name="dialog_review_send_button">Отправить</string>
+    <string name="total">Итого</string>
+    <string name="checkout">Оформить заказ</string>
+    <string name="promo">Применить</string>
+    <string name="cart_empty">Корзина пуста. Добавьте блюда в корзину, чтобы увидеть их здесь.</string>
+    <string name="notices_empty">Уведомлений нет</string>
+    <string name="hint_promo">Введите промокод</string>
+    <string name="fragment_order_label">Оформление заказа</string>
+    <string name="fragment_address_label">Указание адреса</string>
+    <string name="label_address">Адрес:</string>
+    <string name="label_address1">Подъезд:</string>
+    <string name="label_address2">Этаж:</string>
+    <string name="label_address3">Квартира:</string>
+    <string name="label_address4">Домофон:</string>
+    <string name="label_comment">Комментарий:</string>
+    <string name="address_write">Написать</string>
+    <string name="address_map">Указать на карте</string>
+    <string name="address_select">Выбрать адрес</string>
+    <string name="tab_order_active">Актуальные</string>
+    <string name="tab_order_completed">Выполненные</string>
+    <string name="label_status">Статус:</string>
+    <string name="label_total">Сумма:</string>
+    <string name="label_date">Дата:</string>
+    <string name="cancel_order">Отменить заказ</string>
+    <string name="repeat_order">Повторить заказ</string>
+    <string name="label_list_order">Состав заказа:</string>
+
+    <string name="sum_format">%d ₽</string>
+    <string name="sum_format2">%d руб.</string>
+    <string name="total_format">%d шт.</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="email">E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="password2">Повторите пароль</string>
+    <string name="validate_letters_only">Только буквы</string>
+    <string name="validate_email_only">Некорректный e-mail</string>
+    <string name="validate_not_blank">Пустое поле</string>
+    <string name="recovery_email_instruction">Введите электронную почту, которую вы использовали при регистрации, и мы вышлем на нее код для восстановления пароля</string>
+    <string name="recovery_code_instruction">Введите проверочный код</string>
+    <string name="recovery_password_instruction">Введите новый пароль</string>
+    <string name="save">Сохранить</string>
+    <string name="edit">Изменить</string>
+    <string name="change_password">Сменить пароль</string>
+    <string name="cancel">Отменить</string>
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="password_change">Смена пароля</string>
+</resources>
