@@ -1,5 +1,5 @@
 # SB Delivery
-My first completely self-written client/server Android application
+My first Android client-server application written by myself
 
 Description: info/Description.pdf
 
