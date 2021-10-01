@@ -1,15 +1,15 @@
 # SB Delivery
-My first completely self-written client/server application
+My first completely self-written client/server Android application
 
-Description: info\Description.pdf
+Description: info/Description.pdf
 
 API description: https://sbdelivery.docs.apiary.io/#
 
-Postman API collection: info\Postman.json
+Postman API collection: info/Postman.json
 
-Design: info\SB_Delivery.fig
+Design: info/SB_Delivery.fig
 
-APK: \app\build\outputs\apk\debug
+APK: app/build/outputs/apk/debug/app-debug.apk
 
 
 ## Using technologies
