@@ -18,8 +18,8 @@ APK: app/build/outputs/apk/debug/app-debug.apk
 * Navigation component
 * MVVM
 * Coroutines
-* Coroutines Flow
-* Data Binding
+* Coroutines Flow (AddressFragment.kt, MapsFragment.kt, MenuFragment.kt, NoticesFragment.kt)
+* Data Binding (ChangePasswordDialog.kt, AuthFragment.kt, ProfileFragment.kt, RecoveryCodeFragment.kt, RecoveryEmailFragment.kt, RecoveryPasswordFragment.kt, RegFragment.kt, OrderItemFragment.kt)
 * Room
 * Retrofit 2
 * OkHttp3
