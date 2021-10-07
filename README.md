@@ -26,4 +26,5 @@ APK: app/build/outputs/apk/debug/app-debug.apk
 * Moshi
 * Firebase Cloud Messaging
 * Google MAPs
+* RuntimePermission
 * Glide
